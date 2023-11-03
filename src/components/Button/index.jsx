@@ -1,10 +1,15 @@
 import P from "prop-types";
 
+export const Button = ({ children, onButtonClick, disabled = false }) => {
+  return (
+    <button onClick={onButtonClick} disabled={disabled}>
+      {children}
+    </button>
+  );
+};
+
 Button.propTypes = {
   children: P.node.isRequired,
   onButtonClick: P.func.isRequired,
-};
-
-export const Button = ({ children, onButtonClick }) => {
-  return <button onClick={onButtonClick}>{children}</button>;
+  disabled: P.bool,
 };
